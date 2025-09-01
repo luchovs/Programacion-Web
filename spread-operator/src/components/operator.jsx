@@ -28,6 +28,9 @@ export function Operator() {
   ...producto,
   descuento: true
  }));
+ //console.log("Productos con descuento:", productosConDescuento);
+
+
 
  return (
     <>
@@ -36,7 +39,13 @@ export function Operator() {
       ))}
       <h3>Spread Operator</h3>
       <button onClick={addNums}>Agregar números</button>
-      <button onClick={updateName}>Modificar persona</button>
+
+      <h4>Productos con descuento</h4>
+      {productosConDescuento.map((p, i) => (
+        <p key={i}>
+          {p.nombre} - ${p.precio} {p.descuento ? "(Promocion)" :""}
+        </p>
+      ))}
     </>
   );
  }
