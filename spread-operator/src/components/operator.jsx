@@ -10,7 +10,7 @@ export function Operator() {
 
  //arrow function
  const addNums = () => {
-   setNums([...nums, nums.length]);
+   setNums([...nums, nums.length +1]);
  };
 
 
@@ -19,14 +19,24 @@ export function Operator() {
    console.log(persona);
  };
 
+ const productos = [
+  { nombre: "Camiseta", precio: 20 },
+  { nombre: "Pantalon", precio: 30 },
+ ];
+
+ const productosConDescuento = productos.map(producto => ({
+  ...producto,
+  descuento: true
+ }));
+
  return (
     <>
       {nums.map((num, index) => (
         <p key={index}>{num}</p>
       ))}
       <h3>Spread Operator</h3>
-      <button onClick={addNums}>agregar numeros</button>
-      <button onClick={updateName}>modificar persona</button>
+      <button onClick={addNums}>Agregar números</button>
+      <button onClick={updateName}>Modificar persona</button>
     </>
   );
  }
